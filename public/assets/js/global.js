@@ -227,14 +227,14 @@ function LoadSortableBlocks(){
 
                 } else if(columnsSelected == "100,composant"){
                     var tmp = columnsSelected.split(',');
-                    ui.item.replaceWith('<table id="colonne100-'+count+'_composant" class="block" width="100%" border="0" cellspacing="0" cellpadding="0" style="height:70px;"><tr><td colspan="2"><div class="tools"><a class="ui-corner"  data-type="1" title="Configurer"><i class="fa fa-cogs"></i></a></div></td></tr><tr><td colspan="2"><table id="colonne100-'+count+'"  border="0" cellspacing="0" cellpadding="0" style="height:70px;width:100%;"><tr><td class="sortableElement">' +
+                    ui.item.replaceWith('<table id="colonne100-'+count+'_composant" class="block" width="100%" border="0" cellspacing="0" cellpadding="0" style="height:70px;"><tr><td colspan="2"><div class="tools"><a class="ui-corner"  data-type="1" title="Configurer"><i class="fa fa-cogs"></i></a></div></td></tr><tr><td colspan="2"><table id="colonne100-'+count+'"  border="0" cellspacing="0" cellpadding="0" style="height:70px;width:100%;"><tr><td class="sortableElement" style="padding: 0 20px 20px 0;">' +
                         '<table id="imagetitletextbutton-' + count + '" width="100%" border="0" cellspacing="0" cellpadding="0">' +
-                        '<tr><td><div class="sortableElement ui-sortable" id="image-'+count+'" style="float:left;width:100%;text-align: center;border: 2px dashed #ff5722;padding: 6px;background-color: rgba(255,87,34,.6);"><form id="image-'+count+'-form"   class="dragImgTemplate" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data"><div class="dropzone2"><div class="mo-uploadzone" style="position: relative;  border: 2px dotted #808080; text-align: center;"><input class="fileupload" type="file" multiple="" name="files[]" style="z-index: 10;position: absolute;top: 0;left: 0;right: 0;bottom: 0;min-width: 100%;height: 100%;font-zie: 999px;text-align: right;filter: alpha(opacity=0);opacity: 0;outline: none;cursor: inherit;display: block;" title=""><span class="uploadzone uploadzoneImg" >Click or drag file here</span></div></div></form></div></td></tr>' +
+                        '<tr><td style="padding: 20px 0 0 0;"><div class="sortableElement ui-sortable" id="image-'+count+'" style="float:left;width:100%;text-align: center;border: 2px dashed #ff5722;padding: 6px;background-color: rgba(255,87,34,.6);"><form id="image-'+count+'-form"   class="dragImgTemplate" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data"><div class="dropzone2"><div class="mo-uploadzone" style="position: relative;  border: 2px dotted #808080; text-align: center;"><input class="fileupload" type="file" multiple="" name="files[]" style="z-index: 10;position: absolute;top: 0;left: 0;right: 0;bottom: 0;min-width: 100%;height: 100%;font-zie: 999px;text-align: right;filter: alpha(opacity=0);opacity: 0;outline: none;cursor: inherit;display: block;" title=""><span class="uploadzone uploadzoneImg" >Click or drag file here</span></div></div></form></div></td></tr>' +
                         '<tr><td><h2 id="100-1-' + count + '-h2" class="h2" contentEditable=true>Welcome to our responsive email!</h2></td></tr>' +
                         '<tr><td><p id="100-1-' + count + '-p" class="bodycopy" contentEditable=true>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></td></tr>' +
                         '<tr><td><a href="#" id="100-1-' + count + '-a" class="button" contentEditable=true style="background-color: rgb(224, 84, 67);height:45px;">Button</a> </td></tr>' +
                         '</table>' +
-                        '</td></tr></table></td></tr><tr><td colspan="2"><div class="tools"><a class="ui-cornerDrag"   title="Déplacer"><i class="fa fa-arrows"></i></a></div></td></tr><tr><td colspan="2"><div class="tools"><a class="ui-cornerDelete" data-id="colonne100-'+count+'_"   title="Supprimer"><i class="fa fa-trash-o"></i></a></div></td></tr></table>');
+                        '</td></tr></table></td></tr><tr><td colspan="2"><div class="tools"><a class="ui-cornerDrag"   title="Déplacer"><i class="fa fa-arrows"></i></a></div></td></tr><tr><td colspan="2"><div class="tools"><a class="ui-cornerDelete" data-id="colonne100-'+count+'"   title="Supprimer"><i class="fa fa-trash-o"></i></a></div></td></tr></table>');
                     modifs.push("colonne100-"+count+"_composant");
                     count++;
 
@@ -588,19 +588,33 @@ $(function() {
         }else if($(this).get(0).nodeName == "A"){
 
             var styleProps = $( "#"+id ).css([
-                "color", "background-color",  "width", "padding-top", "padding-left", "padding-right", "padding-bottom"
+                "color", "background-color",  "width", "padding-top", "padding-left", "padding-right", "padding-bottom", "btn-title"
             ]);
 
             var url = $(this).attr("href");
-            $("#styleContent").append("<div style='float:left;width : 100%;padding: 15px;background: white;border-radius: 5px;color: #E47C00; margin-top: 10px;'><h4 style='margin: 2px 0px;'>Button :</h4><hr /><table width='100%' style='margin-top: 5px;float: left;' ><tr style='height: 40px;'><td align='center' width='50%'> <label>Largeur :</label></td><td align='left' width='50%'><input type='text' value='"+styleProps['width']+"' class='form-control inputStyle' id='"+id+"_width' style='height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Background :</label></td><td align='left' width='50%'><input type='text' value='"+styleProps['background-color']+"' class='form-control inputStyle' id='"+id+"_background-color' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /><div id='"+id+"_background-color_cercle' style='float: left;     margin-left: 5px;   height: 25px;border-radius: 50%;width: 25px;border: 0;box-shadow: 1px 1px 3px #727272;    background-color: "+styleProps['background-color']+";'></div></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Color :</label></td><td align='left' width='50%'><input type='text' value='"+styleProps['color']+"' class='form-control inputStyle' id='"+id+"_color' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /><div id='"+id+"_color_cercle' style='float: left;     margin-left: 5px;   height: 25px;border-radius: 50%;width: 25px;border: 0;box-shadow: 1px 1px 3px #727272;    background-color: "+styleProps['color']+";'></div></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Padding-top :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['padding-top'] + "' class='form-control inputStyle' id='" + id + "_padding-top' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Padding-left :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['padding-left'] + "' class='form-control inputStyle' id='" + id + "_padding-left' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Padding-right :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['padding-right'] + "' class='form-control inputStyle' id='" + id + "_padding-right' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Padding-bottom :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['padding-bottom'] + "' class='form-control inputStyle' id='" + id + "_padding-bottom' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>URL :</label></td><td align='left' width='50%'><input type='text' value='" + url + "' class='form-control inputAttribut' id='" + id + "_href' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Aparraitre sur mobile</label></td><td align='left' width='50%'><input type='checkbox' checked='checked' data-reverse class='form-control inputShowOnDevice' id='" + id + "_hideOnMobile' style='float:left;height:auto;padding: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Aparraitre sur ipad</label></td><td align='left' width='50%'><input type='checkbox' checked='checked' data-reverse class='form-control inputShowOnDevice' id='" + id + "_hideOnIpad' style='float:left;height:auto;padding: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Aparraitre sur Desktop</label></td><td align='left' width='50%'><input type='checkbox' checked='checked' data-reverse class='form-control inputShowOnDevice' id='" + id + "_hideOnDesktop' style='float:left;height:auto;padding: 2px;width: 88px;' /></td></tr></table><a id='delete_"+id+"' href='#' class='button-delete delete-composant'  style='float:right;background-color: rgb(224, 84, 67);height:45px;'>Supprimer</a></div>");
+            var btnTitle = $(this).text();
+            $("#styleContent").append("<div style='float:left;width : 100%;padding: 15px;background: white;border-radius: 5px;color: #E47C00; margin-top: 10px;'><h4 style='margin: 2px 0px;'>Button :</h4><hr /><table width='100%' style='margin-top: 5px;float: left;' ><tr style='height: 40px;'><td align='center' width='50%'> <label>Largeur :</label></td><td align='left' width='50%'><input type='text' value='"+styleProps['width']+"' class='form-control inputStyle' id='"+id+"_width' style='height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Background :</label></td><td align='left' width='50%'><input type='text' value='"+styleProps['background-color']+"' class='form-control inputStyle' id='"+id+"_background-color' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /><div id='"+id+"_background-color_cercle' style='float: left;     margin-left: 5px;   height: 25px;border-radius: 50%;width: 25px;border: 0;box-shadow: 1px 1px 3px #727272;    background-color: "+styleProps['background-color']+";'></div></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Color :</label></td><td align='left' width='50%'><input type='text' value='#ffffff' class='form-control inputStyle' id='"+id+"_color' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /><div id='"+id+"_color_cercle' style='float: left;     margin-left: 5px;   height: 25px;border-radius: 50%;width: 25px;border: 0;box-shadow: 1px 1px 3px #727272;    background-color: "+styleProps['color']+";'></div></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Padding-top :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['padding-top'] + "' class='form-control inputStyle' id='" + id + "_padding-top' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Padding-left :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['padding-left'] + "' class='form-control inputStyle' id='" + id + "_padding-left' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Padding-right :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['padding-right'] + "' class='form-control inputStyle' id='" + id + "_padding-right' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr>" +
+                "<tr  style='height: 40px;'><td align='center' width='50%'> <label>Padding-bottom :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['padding-bottom'] + "' class='form-control inputStyle' id='" + id + "_padding-bottom' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr>" +
+                "<tr  style='height: 40px;'><td align='center' width='50%'> <label>URL :</label></td><td align='left' width='50%'><input type='text' value='" + url + "' class='form-control inputAttribut' id='" + id + "_href' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr>" +
+                "<tr  style='height: 40px;'><td align='center' width='50%'> <label>Titre :</label></td><td align='left' width='50%'><input type='text' value='" + btnTitle + "' class='form-control inputStyle' id='" + id + "_btn-title' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr>" +
+                "<tr  style='height: 40px;'><td align='center' width='50%'> <label>Aparraitre sur mobile</label></td><td align='left' width='50%'><input type='checkbox' checked='checked' data-reverse class='form-control inputShowOnDevice' id='" + id + "_hideOnMobile' style='float:left;height:auto;padding: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Aparraitre sur ipad</label></td><td align='left' width='50%'><input type='checkbox' checked='checked' data-reverse class='form-control inputShowOnDevice' id='" + id + "_hideOnIpad' style='float:left;height:auto;padding: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Aparraitre sur Desktop</label></td><td align='left' width='50%'><input type='checkbox' checked='checked' data-reverse class='form-control inputShowOnDevice' id='" + id + "_hideOnDesktop' style='float:left;height:auto;padding: 2px;width: 88px;' /></td></tr></table><a id='delete_"+id+"' href='#' class='button-delete delete-composant'  style='float:right;background-color: rgb(224, 84, 67);height:45px;'>Supprimer</a></div>");
+            //On récupére la couleur du btn pour afficher son code hex pré-remplit ds les paramètres de la partie style.
+            var btnColor =  $('#'+id).css('backgroundColor');
+            $("#"+id+"_background-color").val(rgb2hex(btnColor));
+            //Fonction qui change le background-color du bouton
             colorPickerBackground(id);
+            //Fonction qui change la couleur du texte du bouton
             colorPickerColor(id);
+
         }else if($(this).get(0).nodeName == "HR"){
             var styleProps = $( "#"+id ).css([
                 "width", "height",  "background-color", "margin-top",  "margin-bottom"
             ]);
             $("#styleContent").append("<div style='float:left;width : 100%;padding: 15px;background: white;border-radius: 5px;color: #E47C00; margin-top: 10px;'><h4 style='margin: 2px 0px;'>Séparateur :</h4><hr /><table width='100%' style='margin-top: 5px;float: left;' ><tr style='height: 40px;'><td align='center' width='50%'> <label>Largeur :</label></td><td align='left' width='50%'><input type='text' value='"+styleProps['width']+"' class='form-control inputStyle' id='"+id+"_width' style='height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr style='height: 40px;'><td align='center' width='50%'> <label>Longueur :</label></td><td align='left' width='50%'><input type='text' value='"+styleProps['height']+"' class='form-control inputStyle' id='"+id+"_height' style='height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Background :</label></td><td align='left' width='50%'><input type='text' value='"+styleProps['background-color']+"' class='form-control inputStyle' id='"+id+"_background-color' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /><div id='"+id+"_background-color_cercle' style='float: left;     margin-left: 5px;   height: 25px;border-radius: 50%;width: 25px;border: 0;box-shadow: 1px 1px 3px #727272;    background-color: "+styleProps['background-color']+";'></div></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Margin-top :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['margin-top'] + "' class='form-control inputStyle' id='" + id + "_margin-top' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Margin-bottom :</label></td><td align='left' width='50%'><input type='text' value='" + styleProps['margin-bottom'] + "' class='form-control inputStyle' id='" + id + "_margin-bottom' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Aparraitre sur mobile</label></td><td align='left' width='50%'><input type='checkbox' checked='checked' data-reverse class='form-control inputShowOnDevice' id='" + id + "_hideOnMobile' style='float:left;height:auto;padding: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Aparraitre sur ipad</label></td><td align='left' width='50%'><input type='checkbox' checked='checked' data-reverse class='form-control inputShowOnDevice' id='" + id + "_hideOnIpad' style='float:left;height:auto;padding: 2px;width: 88px;' /></td></tr><tr  style='height: 40px;'><td align='center' width='50%'> <label>Aparraitre sur Desktop</label></td><td align='left' width='50%'><input type='checkbox' checked='checked' data-reverse class='form-control inputShowOnDevice' id='" + id + "_hideOnDesktop' style='float:left;height:auto;padding: 2px;width: 88px;' /></td></tr></table><a id='delete_"+id+"' href='#' class='button-delete delete-composant'  style='float:right;background-color: rgb(224, 84, 67);height:45px;'>Supprimer</a></div>");
-                colorPickerBackground(id);
+            //Fonction qui change le background-color du bouton
+            colorPickerBackground(id);
+            var separatorColor =  $('#'+id).css('backgroundColor');
+            $("#"+id+"_background-color").val(rgb2hex(separatorColor));
         }else if($(this).attr("class") == "shareComposant"){
             var styleProps = $( "#"+id ).css([
                 "width", "height",  "background-color", "margin-top",  "margin-bottom"
@@ -659,6 +673,8 @@ $(function() {
                 $("#"+id[0]).css(styleAttrib,val);
             }
 
+        }else if(styleAttrib == "btn-title"){
+            $("#"+id[0]).text(val);
         }else{
 
             if(styleAttrib == "background-color" || styleAttrib == "color"){
@@ -766,21 +782,20 @@ $(function() {
 
         return false;
     });
-    /************************************** Code Reda  ****************************************/
 
     /*********  Evenement  pour afficher la confirmation de la sauvegarde ******/
-    socket.on('saveWorkStatus', function(status) {
+    /*socket.on('saveWorkStatus', function(status) {
         if(status) {
             alert("Travail sauvegrdé avec succès");
         } else {
             alert("Erreur lors de la sauvegarde du travail");
         }
-    });
+    });*/
     /*********  Evenement pour afficher template choisi par l'utilisateur ******/
-    socket.on('setTemplate', function(data) {
+    /*socket.on('setTemplate', function(data) {
         console.log(data);
         //window.location.replace('http://localhost/editeur/public/responsive');
-    });
+    });*/
 
 
 });
@@ -848,4 +863,53 @@ function colorPickerColor(id){
             $('#'+id).css('color', '#' + hex);
             $('#'+id+'_color').val('#'+hex);
         }});
+}
+
+$('#emailContent').click(function(e) {
+    $(".menu-choix").removeClass("active");
+    $(".menu-choix[data-id='style']").addClass("active");
+    $(".menu-content").hide();
+    $("#style").show();
+    $("#styleContent").empty();
+    var id = $(this).attr("id");
+    $("#styleContent").append("<div style='float:left;width : 100%;padding: 15px;background: white;border-radius: 5px;color: #E47C00; margin-top: 10px;'><h4 style='margin: 2px 0px;'>Header, Body, Footer</h4><hr/><table width='100%' style='margin-top: 5px;float: left;' ><tr style='height: 40px;'><td align='center' width='45%'><label>Header background :</label></td><td align='left' width='50%'> <input type='text' value='#ffffff' class='form-control inputStyle' id='headerContent_background-color' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /> <div id='headerContent_background-color_cercle' style='float: left; margin-left: 5px; height: 25px;border-radius: 50%;width: 25px;border: 0;box-shadow: 1px 1px 3px #727272; '></div></td></tr><tr  style='height: 40px;'> <td align='center' width='50%'> <label>Body background :</label> </td><td align='left' width='50%'> <input type='text' value='#F5F5F5' class='form-control inputStyle' id='bodyContent_background-color' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /> <div id='bodyContent_background-color_cercle' style='float: left; margin-left: 5px; height: 25px;border-radius: 50%;width: 25px;border: 0;box-shadow: 1px 1px 3px #727272;'></div></td></tr> <tr style='height: 40px;'><td align='center' width='50%'> <label>Footer background :</label></td><td align='left' width='50%'><input type='text' value='#ffffff' class='form-control inputStyle' id='footerContent_background-color' style='float:left;height:auto;padding: 2px;border-radius: 2px;width: 88px;' /><div id='footerContent_background-color_cercle' style='float: left;     margin-left: 5px;   height: 25px;border-radius: 50%;width: 25px;border: 0;box-shadow: 1px 1px 3px #727272;'></div></td></tr> </div>");
+    var headerCercleColor =  $('#headerContent').css('backgroundColor');
+    $('#headerContent_background-color_cercle').css('backgroundColor', headerCercleColor);
+    $('#headerContent_background-color').val(rgb2hex(headerCercleColor));
+    var bodyCercleColor =  $('#bodyContent').css('backgroundColor');
+    $('#bodyContent_background-color_cercle').css('backgroundColor', bodyCercleColor);
+    $('#bodyContent_background-color').val(rgb2hex(bodyCercleColor));
+    var footerCercleColor =  $('#footerContent').css('backgroundColor');
+    $('#footerContent_background-color_cercle').css('backgroundColor', footerCercleColor);
+    $('#footerContent_background-color').val(rgb2hex(footerCercleColor));
+    $('#headerContent_background-color_cercle, #footerContent_background-color_cercle, #bodyContent_background-color_cercle').ColorPicker({
+        onShow: function (colpkr) {
+            id = $(this).attr("id");
+            ids = id.split("_");
+            $(colpkr).fadeIn(500);
+            return false;
+        },
+        onHide: function (colpkr) {
+            $(colpkr).fadeOut(500);
+            return false;
+        },
+        onChange: function (hsb, hex, rgb) {
+            $('#'+ids[0]+'_background-color_cercle').css('backgroundColor', '#' + hex);
+            $('#'+ids[0]).css('backgroundColor', '#' + hex);
+            $('#'+ids[0]+'_background-color').val('#'+hex);
+        }});
+    return;
+});
+
+/************Fonctions pour convertir les couleurs rgb en hexadecimal******/
+
+var hexDigits = new Array ("0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f");
+
+function rgb2hex(rgb) {
+    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+
+function hex(x) {
+    return isNaN(x) ? "00" : hexDigits[(x - x % 16) / 16] + hexDigits[x % 16];
 }

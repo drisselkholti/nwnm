@@ -339,3 +339,15 @@ h2{
     color: white;
     font-weight: bold;
 }
+.right-side-content{
+    height: 660px;
+    overflow-y: auto;
+    position: fixed;
+    width: auto;
+    background-color: #313131;
+}
+.body-content{
+    height: 100%;
+    border: none;
+    background-color: #F5F5F5;
+}
